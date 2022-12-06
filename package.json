@@ -1,0 +1,48 @@
+{
+  "name": "web-check-version",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "SumyGG Sun <sumyggsun@gmail.com>",
+  "homepage": "https://github.com/sumy7/vite-plugin-generate-file#readme",
+  "bugs": {
+    "url": "https://github.com/sumy7/vite-plugin-generate-file/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumy7/vite-plugin-generate-file.git"
+  },
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "commitizen": "^4.2.6",
+    "cz-git": "^1.4.0",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.11",
+    "axios": "^1.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git",
+      "useEmoji": true
+    }
+  }
+}
