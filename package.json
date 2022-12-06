@@ -1,15 +1,15 @@
 {
   "name": "web-check-version",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "author": "SumyGG Sun <sumyggsun@gmail.com>",
-  "homepage": "https://github.com/sumy7/vite-plugin-generate-file#readme",
+  "author": "虾哔哔",
+  "homepage": "https://github.com/Mrcxt/web-check-version#readme",
   "bugs": {
-    "url": "https://github.com/sumy7/vite-plugin-generate-file/issues"
+    "url": "https://github.com/Mrcxt/web-check-version/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sumy7/vite-plugin-generate-file.git"
+    "url": "https://github.com/Mrcxt/web-check-version"
   },
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "release": "release-it"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.1",
@@ -31,6 +32,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.0",
+    "release-it": "^15.5.1",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
