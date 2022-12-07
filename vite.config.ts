@@ -2,6 +2,9 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "rollup-plugin-typescript2";
 
+let defaults = { compilerOptions: { declaration: true } };
+let override = { compilerOptions: { declaration: false } };
+
 export default defineConfig({
   build: {
     lib: {
@@ -17,6 +20,12 @@ export default defineConfig({
           // vue: "Vue",
         },
       },
+      plugins: [
+        typescript({
+          rollupCommonJSResolveHack: false,
+          clean: true,
+        }),
+      ],
     },
   },
 });
