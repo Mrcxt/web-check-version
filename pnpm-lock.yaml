@@ -24,10 +24,12 @@ specifiers:
   tsup: ^5.1.0
   typescript: ^4.4.3
   vite: ^3.2.3
+  web-check-version: ^1.0.2
 
 dependencies:
   '@types/node': 18.11.11
   axios: 1.2.1
+  web-check-version: 1.0.2
 
 devDependencies:
   '@antfu/eslint-config': 0.9.0_77fvizpdb3y4icyeo2mf4eo7em
@@ -5855,6 +5857,15 @@ packages:
     dependencies:
       defaults: 1.0.4
     dev: true
+
+  /web-check-version/1.0.2:
+    resolution: {integrity: sha512-NaQAUWjXklWG7w5OfIWjGG+hlxeuQqzpNxyzvzLFREsiy0lxVJKgsfRFuWwH7jdEKhehpSZv2RCOox1/UKxUEQ==}
+    dependencies:
+      '@types/node': 18.11.11
+      axios: 1.2.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /web-streams-polyfill/3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
