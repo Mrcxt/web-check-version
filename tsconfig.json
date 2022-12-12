@@ -11,5 +11,6 @@
     "noImplicitAny": false,
     "declaration": true
   },
-  "include": ["src", "example"]
+  "include": ["src", "vite-env.d.ts", "vite-env.d.ts", "index.ts"],
+  "exclude": ["example"]
 }

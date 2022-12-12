@@ -1,20 +1,10 @@
 /*
- * @LastEditTime: 2022-12-07 15:48:08
+ * @LastEditTime: 2022-12-12 21:53:37
  * @Description:
  * @Date: 2022-12-06 14:33:17
  * @Author: @虾哔哔
  */
 import axios from "axios";
-
-const reload = () => {
-  window.location.reload();
-};
-
-const getVersion = (filePath: string) => {
-  return axios.get(filePath, {
-    params: { t: Date.now() },
-  });
-};
 
 type IVersion = string | number;
 
@@ -38,10 +28,21 @@ export interface IOptions {
    * reload:() => void 是否刷新页面
    * options?:{version} 版本号
    */
-  update?: (reload: () => void, options?: { version?: IVersion }) => void;
+  update?: (reload: () => void, options: { version: IVersion }) => void;
+  debug?: boolean;
 }
 
-export const webVersionCheck = (options: IOptions) => {
+const reload = () => {
+  window.location.reload();
+};
+
+const getVersion = (filePath: string) => {
+  return axios.get(filePath, {
+    params: { t: Date.now() },
+  });
+};
+
+export default (options: IOptions) => {
   let version: IVersion;
   let timer: number = 0;
   const {
@@ -49,6 +50,7 @@ export const webVersionCheck = (options: IOptions) => {
     interval = 5 * 60 * 1000,
     key = "version",
     update,
+    debug = false,
   } = options;
 
   const startTimer = () => {
@@ -63,14 +65,22 @@ export const webVersionCheck = (options: IOptions) => {
     const { status, data } = res;
 
     if (status === 200) {
-      if (version && version !== data[key]) {
-        // 关闭定时
-        timer && window.clearTimeout(timer);
-        update?.(reload, { version: data[key] });
-        return;
+      if (debug) {
+        if (version !== data[key]) {
+          version = data.version;
+        } else {
+          timer && window.clearTimeout(timer);
+          update?.(reload, { version: data[key] });
+          return;
+        }
       } else {
-        version = data.version;
-        // 开启定时器
+        if (version && version !== data[key]) {
+          timer && window.clearTimeout(timer);
+          update?.(reload, { version: data[key] });
+          return;
+        } else {
+          version = data.version;
+        }
       }
     }
     startTimer();

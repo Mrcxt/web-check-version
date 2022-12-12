@@ -17,10 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build:r": "rollup -c",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "rollup",
+    "build": "rollup -c",
     "release": "rollup -c && release-it"
   },
   "devDependencies": {
@@ -49,8 +47,7 @@
   },
   "dependencies": {
     "@types/node": "^18.11.11",
-    "axios": "^1.2.1",
-    "web-check-version": "^1.0.2"
+    "axios": "^1.2.1"
   },
   "config": {
     "commitizen": {
